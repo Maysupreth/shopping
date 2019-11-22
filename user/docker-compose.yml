@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: mysql_shopping
+    ports:
+      - "3306:3306"
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1qaz2wsx
+      MYSQL_DATABASE: shopping
+    volumes:
+      - "my-db:/var/lib/mysql"
+volumes:
+  my-db:
